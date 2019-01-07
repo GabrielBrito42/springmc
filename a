@@ -1,0 +1,239 @@
+[33mcommit 4a00544f29903ee2eee8c338f2bf4b79bfb5450e[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Sat Jan 5 15:26:52 2019 -0300
+
+    Adicionando senha ao cliente
+
+[33mcommit 2fa616be206c48b97f567aea180a0e74d0b21551[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Sat Jan 5 02:01:56 2019 -0300
+
+    Configuracao inicial do SpringSecurity
+
+[33mcommit 1f1b884e392d1548f587ac932923520fd5343730[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Fri Jan 4 10:47:28 2019 -0300
+
+    Email Html
+
+[33mcommit 66885d5cebd20c720f7f1bdf1ff6558973d01eae[m[33m ([m[1;32memail-html[m[33m)[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed Jan 2 13:37:28 2019 -0300
+
+    Implementando SmtpEmailService com email do google
+
+[33mcommit 87707cdb8f1e5ff4103a1328d00645d7898e161a[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed Jan 2 10:15:30 2019 -0300
+
+    MockEmailService com logger. Padrões Strategy e Template
+
+[33mcommit c8adaa2bd6b6b53f668b5c4b6e1744078d0b9c44[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jan 1 17:18:04 2019 -0300
+
+    Implementando toString de Pedido
+
+[33mcommit 4aa0a038ad59df7ea1d1a954f5375aa352f5b389[m[33m ([m[1;31mheroku/master[m[33m)[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jan 1 11:44:57 2019 -0300
+
+    Configuracao e envio do projeto para producao
+
+[33mcommit eb6f809b80a1e523e5f22c7571dbc042e128559d[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 28 16:37:28 2018 -0300
+
+    Criando Profile de Desenvolvimento
+
+[33mcommit da204b7087f257612245350ecd6ca899a4523931[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 28 15:54:43 2018 -0300
+
+    Criando Profile de teste
+
+[33mcommit 51d5af10ae86d34af9badae2f9766f25130cb470[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed Jun 27 19:12:54 2018 -0300
+
+    Inserindo PEDIDO
+
+[33mcommit 629e5625541541742d134863ba614b5d2e0a47a6[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed Jun 27 17:47:18 2018 -0300
+
+    Subtotal e Total do Pedido
+
+[33mcommit 7f80bd9b3832299d0792800baffda36e69cc7b14[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed Jun 27 17:40:07 2018 -0300
+
+    Busca de Produtos por nome e Categorias
+
+[33mcommit 26c9048b9e73c302aa07f387b87948fadbeb7f82[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 26 14:49:12 2018 -0300
+
+    Validação de repetição de email na atualização
+
+[33mcommit 289739aaf6ac2eabe3c9e0aecbf2434e3cf8652a[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 26 13:41:40 2018 -0300
+
+    Validação de email unico
+
+[33mcommit a7a5c7be10d7ca1567bcbaa92a5009ea048572dc[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed Jun 20 15:15:20 2018 -0300
+
+    Validacao customizada de cpf ou cnpj na insercao de cliente
+
+[33mcommit 69e35407966de23fd9eb894ade118660c9d5de09[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon Jun 18 16:01:37 2018 -0300
+
+    Ajustando a delecao de Clientes
+
+[33mcommit 963749492b3725f9afd4cfd8e04681fde2a557ec[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 14 16:32:42 2018 -0300
+
+    Inserindo um novo Cliente com POST
+
+[33mcommit 97017377cfa99c91626795a4a59974eb69df08dd[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 14 14:58:37 2018 -0300
+
+    Correcoes, Update em CategoriaService e  construtor do Pagamento
+
+[33mcommit d933921c2bf0533144bff0f14d1ee473b7345eef[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon Jun 11 16:01:23 2018 -0300
+
+    Personalizando o retorno de Validacao
+
+[33mcommit a08625b015519ac49cc410fb9eb8aa663d047dd8[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 7 13:09:48 2018 -0300
+
+    Validacao sintatica com Bean
+
+[33mcommit e765dc67c7588b723e8cb75b46ca12d8ba996176[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 7 12:49:52 2018 -0300
+
+    Paginacao com parametros opcionais na requisicao
+
+[33mcommit 6fe09942b4bbb614719153c985a93579b8f44f6a[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 7 11:09:09 2018 -0300
+
+    Listando todas as categorias com DTO
+
+[33mcommit 512b3aac62918baa6f33cf609dc26cdf66e718b2[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Thu Jun 7 10:42:54 2018 -0300
+
+    Delete inserido
+
+[33mcommit 58e3161d83382133cdfde89a95bf88c33547a999[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 5 14:55:26 2018 -0300
+
+    Atualizando Categoria com PUT e mais alguns pequenos ajustes
+
+[33mcommit efc11553e5d60ae0f6df53cb6257ebdfe40374be[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 5 14:37:11 2018 -0300
+
+    Inserindo uma nova Categoria com POST
+
+[33mcommit 266c57672e55e9c8b21d8c3d305448ec28887b5f[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 5 14:12:50 2018 -0300
+
+    Atualizacao utilizacao somente do JsonIgnore
+
+[33mcommit c3485a70b56dca25a70c7746b2097d33c5d04fbb[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 5 13:45:17 2018 -0300
+
+    Endpoint /pedidos/{id} instanciado
+
+[33mcommit fdf25a4d7dc283b27b264bd29b466d167175f0f6[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Tue Jun 5 13:06:42 2018 -0300
+
+    ItemPedido e ItemPedidoPK
+
+[33mcommit 2da58a68f1a2607af23af2d49e5c48e291a1f297[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Sun Jun 3 12:16:44 2018 -0300
+
+    Pedido, EstadoPagamento e Pagamento
+
+[33mcommit d86bf340783133ba40029e79a7a2dd20cf65e38c[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Sat Jun 2 10:39:47 2018 -0300
+
+    Endpoint Cliente id
+
+[33mcommit 98863ab2f9b93de4656d5e3aafe89dfaa8792bbe[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Fri Jun 1 14:26:14 2018 -0300
+
+    Cliente TipoCliente Telefone e Enderecos
+
+[33mcommit 5646dd87b608674fd8e2b84717d33ee50d6736a8[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Fri Jun 1 13:04:17 2018 -0300
+
+    Estado e cidade
+
+[33mcommit c18dd3f51a008752cf7b0cb6ab0782e088a308c0[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed May 30 20:59:02 2018 -0300
+
+    Ajustes no endPoint/categorias/id
+
+[33mcommit d555e2138fbd1729912d3f29ea114cf48485ccaf[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed May 30 20:05:51 2018 -0300
+
+    Adicao de relacionamento com produtos
+
+[33mcommit 52b6a1bca98d6ff08cf978c382bc5879c317fbc9[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Wed May 30 15:07:04 2018 -0300
+
+    Criando operacao de instanciacao
+
+[33mcommit 960c39d10fedc34162e1257935b451c4ff07628f[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon May 28 23:34:13 2018 -0300
+
+    Criando repository e service para Categoria
+
+[33mcommit 96bbf29d49c7c3498733e7f0dacb59a25b1dd6a0[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon May 28 20:02:20 2018 -0300
+
+    Banco de dados H2 e criacao automatica do banco de dados
+
+[33mcommit d72143607e3e0dd420b10fd2061feb6a2bd2079e[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon May 28 16:25:14 2018 -0300
+
+    Testando a primeira classe de dominio
+
+[33mcommit f0d1e863c04da306dbbb82d4b661337b863f61b5[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon May 28 14:27:16 2018 -0300
+
+    REST testado
+
+[33mcommit 5e7237b1c5acfe17f0e8e0f7592478ddf796503d[m
+Author: ItSinon <artesilksjc@hotmail.com>
+Date:   Mon May 28 13:53:05 2018 -0300
+
+    Projeto Criado
