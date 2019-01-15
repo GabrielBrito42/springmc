@@ -2,6 +2,7 @@ package com.diego.spring.dto;
 
 import java.io.Serializable;
 
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
