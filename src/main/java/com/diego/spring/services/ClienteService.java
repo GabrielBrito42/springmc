@@ -1,5 +1,7 @@
 package com.diego.spring.services;
 
+import java.io.IOException;
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,6 +13,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.diego.spring.domain.Cidade;
 import com.diego.spring.domain.Cliente;
@@ -26,6 +29,9 @@ import com.diego.spring.services.exceptions.AuthorizationException;
 import com.diego.spring.services.exceptions.DataIntegrityException;
 import com.diego.spring.services.exceptions.ObjectNotFoundException;
 
+import io.minio.errors.InvalidExpiresRangeException;
+import io.minio.errors.RegionConflictException;
+
 @Service
 public class ClienteService {
 
@@ -37,6 +43,9 @@ public class ClienteService {
 	
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private MinioService minioService;
 	
 	@Transactional
 	public Cliente insert(Cliente obj) {
@@ -105,5 +114,9 @@ public class ClienteService {
 	private void updateData(Cliente newObj, Cliente obj) {
 		newObj.setNome(obj.getNome());
 		newObj.setEmail(obj.getEmail());
+	}
+	
+	public URI uploadProfilePicture(MultipartFile multipartFile) throws RegionConflictException, IOException, InvalidExpiresRangeException {
+		return minioService.uploadFile(multipartFile);
 	}
 }

@@ -1,5 +1,6 @@
 package com.diego.spring.resources;
 
+import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.diego.spring.domain.Categoria;
@@ -22,6 +24,9 @@ import com.diego.spring.domain.Cliente;
 import com.diego.spring.dto.ClienteDTO;
 import com.diego.spring.dto.ClienteNewDTO;
 import com.diego.spring.services.ClienteService;
+
+import io.minio.errors.InvalidExpiresRangeException;
+import io.minio.errors.RegionConflictException;
 
 @RestController
 @RequestMapping(value="/clientes")
@@ -74,6 +79,12 @@ public class ClienteResource {
 		obj = service.insert(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(obj.getId()).toUri();
+		return ResponseEntity.created(uri).build();
+	}
+	
+	@RequestMapping(value="/picture", method=RequestMethod.POST)
+	public ResponseEntity<Void> uploadProfilePicture(@RequestParam(name="file") MultipartFile file) throws RegionConflictException, IOException, InvalidExpiresRangeException{
+		URI uri = service.uploadProfilePicture(file);
 		return ResponseEntity.created(uri).build();
 	}
 }

@@ -1,16 +1,14 @@
 package com.diego.spring.services;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.xmlpull.v1.XmlPullParserException;
+import org.springframework.web.multipart.MultipartFile;
 
 import io.minio.MinioClient;
 import io.minio.errors.ErrorResponseException;
@@ -18,6 +16,7 @@ import io.minio.errors.InsufficientDataException;
 import io.minio.errors.InternalException;
 import io.minio.errors.InvalidArgumentException;
 import io.minio.errors.InvalidBucketNameException;
+import io.minio.errors.InvalidExpiresRangeException;
 import io.minio.errors.NoResponseException;
 import io.minio.errors.RegionConflictException;
 
@@ -27,9 +26,17 @@ public class MinioService {
 	@Autowired
 	private MinioClient minioClient;
 	
-	public void uploadFile(String localFilePath) throws RegionConflictException  {
+	public URI uploadFile(MultipartFile multipartFile) throws RegionConflictException, IOException, InvalidExpiresRangeException {
+		String fileName = multipartFile.getOriginalFilename();
+		InputStream is = multipartFile.getInputStream();
+		String contentType = multipartFile.getContentType();
+		return uploadFile(is, fileName, contentType);
+	}
+	
+	public URI uploadFile(InputStream is, String fileName, String contentType) throws RegionConflictException, InvalidExpiresRangeException  {
 		try {
-				minioClient.putObject("springmc", "sinon.jpg", localFilePath);
+				minioClient.putObject("springmc", fileName, is, contentType);
+				return URI.create(minioClient.presignedGetObject("springmc", fileName));
 			} catch (InvalidArgumentException e) {
 				e.printStackTrace();
 		} catch(InvalidBucketNameException e) {
@@ -50,6 +57,6 @@ public class MinioService {
 			System.out.println("Erro interno de biblioteca");
 		} catch(org.xmlpull.v1.XmlPullParserException e) {
 			System.out.println("Erro no arquivo de xml");
-		}
+		} return null;
 	}
 }
