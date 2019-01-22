@@ -55,6 +55,9 @@ public class ClienteService {
 	@Value("${img.prefix.client.profile}")
 	private String prefix;
 	
+	@Value("${img.profile.size}")
+	private int size;
+	
 	@Transactional
 	public Cliente insert(Cliente obj) {
 		obj.setId(null);
@@ -130,6 +133,8 @@ public class ClienteService {
 			throw new AuthorizationException("Acesso negado");
 		}
 		BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
+		jpgImage = imageService.cropSquare(jpgImage);
+		jpgImage = imageService.resize(jpgImage, size);
 		String fileName = prefix + user.getId() + ".jpg";
 		return minioService.uploadFile(imageService.getInputStream(jpgImage, "jpg"), fileName, multipartFile.getContentType());	
 	}
