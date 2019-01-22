@@ -117,6 +117,14 @@ public class ClienteService {
 	}
 	
 	public URI uploadProfilePicture(MultipartFile multipartFile) throws RegionConflictException, IOException, InvalidExpiresRangeException {
-		return minioService.uploadFile(multipartFile);
+		UserSS user = UserService.authenticated();
+		if(user == null) {
+			throw new AuthorizationException("Acesso negado");
+		}
+		Cliente cli = repo.getOne(user.getId());
+		URI uri = minioService.uploadFile(multipartFile);
+		cli.setImageUrl(uri.toString());
+		repo.save(cli);
+		return uri;
 	}
 }
