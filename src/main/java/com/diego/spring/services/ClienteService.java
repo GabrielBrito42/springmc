@@ -1,11 +1,13 @@
 package com.diego.spring.services;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -46,6 +48,12 @@ public class ClienteService {
 	
 	@Autowired
 	private MinioService minioService;
+	
+	@Autowired
+	private ImageService imageService;
+
+	@Value("${img.prefix.client.profile}")
+	private String prefix;
 	
 	@Transactional
 	public Cliente insert(Cliente obj) {
@@ -121,10 +129,8 @@ public class ClienteService {
 		if(user == null) {
 			throw new AuthorizationException("Acesso negado");
 		}
-		Cliente cli = repo.getOne(user.getId());
-		URI uri = minioService.uploadFile(multipartFile);
-		cli.setImageUrl(uri.toString());
-		repo.save(cli);
-		return uri;
+		BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
+		String fileName = prefix + user.getId() + ".jpg";
+		return minioService.uploadFile(imageService.getInputStream(jpgImage, "jpg"), fileName, multipartFile.getContentType());	
 	}
 }
